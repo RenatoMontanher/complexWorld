@@ -81,6 +81,7 @@ Game_Interpreter.prototype.pluginCommand = function(command, args) {
     Yanfly.LINK.Game_Interpreter_pluginCommand.call(this, command, args)
     if (command === 'OpenNewTab') this.openNewTab(args);
 		if (command === 'OpenNewWindow') this.openNewWindow(args);
+		if (command === 'appendChild') this.appendChild(args);
 };
 
 Game_Interpreter.prototype.openNewTab = function(args) {
@@ -105,6 +106,20 @@ Game_Interpreter.prototype.openNewWindow = function(args) {
 	} else {
 		SceneManager.openPopupBlockerMessage();
 	}
+};
+
+Game_Interpreter.prototype.appendChild = function(args) {
+	TouchInput.clear();
+	Input.clear();
+	var elementChild = String(args[0]);
+	var div = document.createElement("div");
+	div.innerHTML = "asdfasdfa";
+
+
+	div.innerHTML = "<df-messenger chat-icon=\"https://storage.googleapis.com/cloudprod-apiai/8c209f1c-6fdc-449d-ae4d-e251fbc3c613_x.png\"  intent=\"WELCOME\"   chat-title=\"Aretuso\"  agent-id=\"7a1d4f03-69c6-466d-beec-00e4276603c1\"  language-code=\"en\"></df-messenger>";
+
+	alert(elementChild);
+	
 };
 
 //=============================================================================
