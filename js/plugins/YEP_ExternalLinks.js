@@ -96,16 +96,16 @@ Game_Interpreter.prototype.openNewTab = function(args) {
 	}
 };
 
-Game_Interpreter.prototype.openNewWindow = function(args) {
+Game_Interpreter.prototype.appendChild = function(args) {
 	TouchInput.clear();
 	Input.clear();
-	var url = String(args[0]);
-	var win = window.open(url);
-	if (win) {
-		win.focus();
-	} else {
-		SceneManager.openPopupBlockerMessage();
-	}
+	
+	document.getElementById("teste").style.display = 'block';
+
+	$("#myModal").modal({
+		show: true
+	  });
+
 };
 
 Game_Interpreter.prototype.appendChild = function(args) {

@@ -10,56 +10,15 @@
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
         <title>Complex World</title>
 		<meta name="viewport" content="width-device-width, initial-scale=1">
-		<style>
-body {
-  font-family: "Lato", sans-serif;
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+.esconde{
+display: none;
 }
 
-.sidepanel  {
-  width: 0;
-  position: absolute;
-  z-index: 2;
-  height: 250px;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top:60px;
-}
-
-.sidepanel a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidepanel a:hover {
-  color: #f1f1f1;
-}
-
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-}
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 15px 115px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color:#444;
-}
 </style>
     </head>
     <body style="background-color: black">
@@ -78,30 +37,43 @@ body {
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 		<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<div id="teste">		
-	
+<div class="esconde" id="teste">
+
+<div class="container">
+
+  <h2></h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Talk to the Billy</button>
+
+  <!-- Modal -->
+  <div class=" modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-md">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Billy</h4>
+        </div>
+        <div class="modal-body">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              allow="microphone;"
+              width="350"
+              height="430"
+              src="https://console.dialogflow.com/api-client/demo/embedded/billy">
+          </iframe>  </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
 </div>
-<button class="openbtn" onclick="openNav()">☰ Fale com o Billy</button>  
-
-<div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <iframe
-    allow="microphone;"
-    width="350"
-    height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/billy">
-	</iframe>
-</div>
-
-<script>
-function openNav() {
-  document.getElementById("mySidepanel").style.width = "360px";
-  document.getElementById("mySidepanel").style.height = "450px";
-}
-
-function closeNav() {
-  document.getElementById("mySidepanel").style.width = "0";
-}
-</script>
-    </body>
+    
+	</div>
+	</body>
 </html>
