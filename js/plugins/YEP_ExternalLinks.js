@@ -96,6 +96,18 @@ Game_Interpreter.prototype.openNewTab = function(args) {
 	}
 };
 
+Game_Interpreter.prototype.openNewWindow = function(args) {
+	TouchInput.clear();
+	Input.clear();
+	var url = String(args[0]);
+	var win = window.open(url);
+	if (win) {
+		win.focus();
+	} else {
+		SceneManager.openPopupBlockerMessage();
+	}
+};
+
 Game_Interpreter.prototype.appendChild = function(args) {
 	TouchInput.clear();
 	Input.clear();
@@ -106,20 +118,6 @@ Game_Interpreter.prototype.appendChild = function(args) {
 		show: true
 	  });
 
-};
-
-Game_Interpreter.prototype.appendChild = function(args) {
-	TouchInput.clear();
-	Input.clear();
-		
-	var elementChild = String(args[0]);
-	
-	var teste = document.getElementById("teste");
-
-	teste.innerHTML = "<df-messenger chat-icon=\"https://storage.googleapis.com/cloudprod-apiai/8c209f1c-6fdc-449d-ae4d-e251fbc3c613_x.png\"  intent=\"WELCOME\"   chat-title=\"Aretuso\"  agent-id=\"7a1d4f03-69c6-466d-beec-00e4276603c1\"  language-code=\"en\"></df-messenger>";
-
-	alert(elementChild);
-	
 };
 
 //=============================================================================
