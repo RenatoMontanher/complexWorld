@@ -8,7 +8,7 @@
         <link rel="icon" href="icon/icon.png" type="image/png">
         <link rel="apple-touch-icon" href="icon/icon.png">
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
-        <title>V13 Complex World</title>
+        <title>V14 Complex World</title>
 		<meta name="viewport" content="width-device-width, initial-scale=1">
 		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,6 +20,40 @@ display: none;
 }
 
 </style>
+<script>
+            const tempoEspera = 5000; //ms
+
+            function addEvent(obj, evt, fn) {
+                if (obj.addEventListener) {
+                    obj.addEventListener(evt, fn, false);
+                }
+                else if (obj.attachEvent) {
+                    obj.attachEvent("on" + evt, fn);
+                }
+            }
+
+            function removeEvent(obj, evt, fn){
+                if(obj.addEventListener){
+                    obj.removeEventListener(evt, fn);
+                }
+                else if (obj.attachEvent){
+                    obj.removeEventListener('on' + evt, fn);
+                }
+            }
+
+            addEvent(window, 'load', e => {
+                setTimeout(ev => addEvent(document, 'mouseleave', fnNaoSaia), tempoEspera);
+                var spanTempo = document.querySelector('span#tempoEspera');
+                spanTempo.innerText = tempoEspera;
+            });
+
+            function fnNaoSaia(e) {
+                var popup = document.querySelector('dialog#linkPopup');
+               popup.show();
+               removeEvent(document, 'mouseleave', fnNaoSaia);
+            }
+
+        </script>
     </head>
     <body style="background-color: black">
         <script type="text/javascript" src="js/libs/pixi.js"></script>
@@ -39,7 +73,7 @@ display: none;
 		<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 		
 		
-		<button type="button" class="btn btn-success btn-lg" onclick=" window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBSBNyQSe0PuDvetUFMQuyVPiXPNvrROpFM46OiIVxFrVtcA/viewform?usp=sf_link', '_blank'); return false;">finalizar jogo e continuar</button>
+		<button type="button" class="btn btn-success btn-lg" onclick=" window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBSBNyQSe0PuDvetUFMQuyVPiXPNvrROpFM46OiIVxFrVtcA/viewform?usp=sf_link', '_blank'); return false;">finalizar jogo agora!</button>
 		
 
 <div class="esconde" id="teste">
@@ -79,5 +113,6 @@ display: none;
 </div>
     
 	</div>
+	<dialog id="linkPopup"><h1>Vejo que está saindo...</h1>Poderia Responder o segundo questionário? <a href="https://docs.google.com/forms/d/10i-thckG5Eaauaz4e4KCGMRN4P1oeG19vZnpfq3H3Ks/edit" target="_blank">Ir para questionário Final</a></dialog>
 	</body>
 </html>
