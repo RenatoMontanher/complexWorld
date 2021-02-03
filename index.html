@@ -20,40 +20,6 @@ display: none;
 }
 
 </style>
-<script>
-            const tempoEspera = 5000; //ms
-
-            function addEvent(obj, evt, fn) {
-                if (obj.addEventListener) {
-                    obj.addEventListener(evt, fn, false);
-                }
-                else if (obj.attachEvent) {
-                    obj.attachEvent("on" + evt, fn);
-                }
-            }
-
-            function removeEvent(obj, evt, fn){
-                if(obj.addEventListener){
-                    obj.removeEventListener(evt, fn);
-                }
-                else if (obj.attachEvent){
-                    obj.removeEventListener('on' + evt, fn);
-                }
-            }
-
-            addEvent(window, 'load', e => {
-                setTimeout(ev => addEvent(document, 'mouseleave', fnNaoSaia), tempoEspera);
-                var spanTempo = document.querySelector('span#tempoEspera');
-                spanTempo.innerText = tempoEspera;
-            });
-
-            function fnNaoSaia(e) {
-                var popup = document.querySelector('dialog#linkPopup');
-               popup.show();
-               removeEvent(document, 'mouseleave', fnNaoSaia);
-            }
-
-        </script>
     </head>
     <body style="background-color: black">
         <script type="text/javascript" src="js/libs/pixi.js"></script>
@@ -72,7 +38,7 @@ display: none;
         <script type="text/javascript" src="js/main.js"></script>
 		<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 		
-		<dialog id="linkPopup"><h1>Vejo que está saindo...</h1>Poderia Responder o segundo questionário? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBSBNyQSe0PuDvetUFMQuyVPiXPNvrROpFM46OiIVxFrVtcA/viewform?usp=sf_link" target="_blank">Ir para questionário Final</a></dialog>
+		
 		
 		<button type="button" class="btn btn-success btn-lg" onclick=" window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBSBNyQSe0PuDvetUFMQuyVPiXPNvrROpFM46OiIVxFrVtcA/viewform?usp=sf_link', '_blank'); return false;">finalizar jogo e ir para ultima etapa!</button>
 		
