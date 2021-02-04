@@ -82,6 +82,7 @@ Game_Interpreter.prototype.pluginCommand = function(command, args) {
     if (command === 'OpenNewTab') this.openNewTab(args);
 		if (command === 'OpenNewWindow') this.openNewWindow(args);
 		if (command === 'appendChild') this.appendChild(args);
+		if (command === 'mostrarBotaoFinal') this.mostrarBotaoFinal(args);
 };
 
 Game_Interpreter.prototype.openNewTab = function(args) {
