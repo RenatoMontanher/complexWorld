@@ -8,7 +8,7 @@
         <link rel="icon" href="icon/icon.png" type="image/png">
         <link rel="apple-touch-icon" href="icon/icon.png">
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
-        <title>V16 Complex World</title>
+        <title>V17 Complex World</title>
 		<meta name="viewport" content="width-device-width, initial-scale=1">
 		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -40,46 +40,49 @@ display: none;
 		
 		
 		
-		<button type="button" class="btn btn-success btn-lg" onclick=" window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBSBNyQSe0PuDvetUFMQuyVPiXPNvrROpFM46OiIVxFrVtcA/viewform?usp=sf_link', '_blank'); return false;">finalizar jogo e ir para ultima etapa!</button>
+		<button 
+		id="botaoFinal" 
+		type="button" 
+		class="btn btn-success btn-lg"
+		style = "display: none;"		
+		onclick=" window.open('https://docs.google.com/forms/d/e/1FAIpQLSeBSBNyQSe0PuDvetUFMQuyVPiXPNvrROpFM46OiIVxFrVtcA/viewform?usp=sf_link', '_blank'); return false;">finalizar jogo e ir para ultima etapa!</button>
 		
 
 <div class="esconde" id="teste">
-<div class="container-fluid">
+	<div class="container-fluid">
 
-  <h2></h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Talk to the Billy</button>
+	  <h2></h2>
+	  <!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Talk to the Billy</button>
 
-  <!-- Modal -->
-  <div class=" modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-md">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Billy</h4>
-        </div>
-        <div class="modal-body">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe
-              allow="microphone;"
-              width="350"
-              height="430"
-              src="https://console.dialogflow.com/api-client/demo/embedded/billy">
-          </iframe>  </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  
-</div>
-    
+	  <!-- Modal -->
+		<div class=" modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-md">
+			
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">Billy</h4>
+				</div>
+				<div class="modal-body">
+				  <div class="embed-responsive embed-responsive-16by9">
+					<iframe
+					  allow="microphone;"
+					  width="350"
+					  height="430"
+					  src="https://console.dialogflow.com/api-client/demo/embedded/billy">
+				  </iframe>  </div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			  
+			</div>
+		</div>
 	</div>
+</div>
 	
 	</body>
 </html>

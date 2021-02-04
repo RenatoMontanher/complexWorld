@@ -120,6 +120,17 @@ Game_Interpreter.prototype.appendChild = function(args) {
 
 };
 
+Game_Interpreter.prototype.mostrarBotaoFinal = function(args) {
+	TouchInput.clear();
+	Input.clear();
+	
+	var x = document.getElementById("botaoFinal");
+	if (x.style.display === "none") {
+	  x.style.display = "block";
+	} else {
+	  x.style.display = "none";
+	}
+};
 //=============================================================================
 // Window_TitleCommand
 //=============================================================================
